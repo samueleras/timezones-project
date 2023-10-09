@@ -1,0 +1,84 @@
+:root {
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    --text-primary: #000000;
+    --text-secondary: #807878;
+    --bg-primary: #fcfdc1;
+    --bg-secondary: #141418;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+
+
+
+/* Main */
+
+main{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary)
+}
+
+.section{
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    width: min(70%, 25rem);
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-primary);
+}
+
+.time-container{
+margin: 5rem;
+display: inline-block;
+}
+
+#timezone{
+    text-align: end;
+    color: var(--text-secondary);
+}
+
+#time{
+    text-align: end;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#date{
+    text-align: end;
+    font-weight: 700;
+}
+
+
+/* On screens that are 992px or more (TABLET/DESKTOP) */
+@media screen and (min-width: 600px) {
+
+    /* MQ Navbar */
+
+    /* MQ Main */
+
+}
+
+/* On screens that are 992px or more (DESKTOP) */
+@media screen and (min-width: 992px) {
+
+    /* MQ Navbar */
+
+    /* MQ Main */
+    .section{
+        width: min(40%, 30rem);
+    }
+
+}

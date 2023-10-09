@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "micromodal": "^0.4.10"
+  },
+  "name": "01.7_timezones_with_npm",
+  "version": "1.0.0",
+  "description": "Application for Timezones",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
