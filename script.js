@@ -8,7 +8,7 @@ let myDate = new Date();
 console.log(myDate);
 
 
-//First Setup git in VS, then create the timezoneapp as public repo with days and micromodal as described in the fullstack roadmap. Search for the package documentaries on npmjs.com
+//First Setup git in VS, then create the timezoneapp as public repo with dayjs and micromodal as described in the fullstack roadmap. Search for the package documentaries on npmjs.com
 
 
 dayjs
