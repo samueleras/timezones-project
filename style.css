@@ -23,7 +23,7 @@ body {
 
 /* Main */
 
-main{
+main {
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -31,34 +31,50 @@ main{
     color: var(--text-primary)
 }
 
-.section{
+.section {
     border: 2px solid black;
     border-radius: 0.4rem;
-    width: min(70%, 25rem);
+    width: clamp(30rem, 70%, 50rem);
     display: flex;
     justify-content: center;
     background-color: var(--bg-primary);
 }
 
-.time-container{
-margin: 5rem;
-display: inline-block;
+.time-container {
+    margin: min(10rem, 10vw);
+/*     display: inline-block; */
 }
 
-#timezone{
+.timezone-container{
     text-align: end;
+}
+
+#timezone {
+    display: inline-block;
     color: var(--text-secondary);
+    padding-inline: 0.2em;
+    font-size: 1.5rem;
 }
 
-#time{
+#edit {
+    display: inline-block;
+    background: url('images/edit-icon.svg') no-repeat;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+#time {
     text-align: end;
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 700;
 }
 
-#date{
+#date {
     text-align: end;
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 
@@ -77,8 +93,6 @@ display: inline-block;
     /* MQ Navbar */
 
     /* MQ Main */
-    .section{
-        width: min(40%, 30rem);
-    }
+
 
 }
