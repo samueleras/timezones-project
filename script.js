@@ -23,7 +23,10 @@ dayjs.extend(timezone);
 
 
 //Import micromodal
-const { default: MicroModal } = require("micromodal");
+const MicroModal = require("micromodal");
+
+//Initialize Micromodal. Will ne called by #edit button via attribute
+MicroModal.init();
 
 
 

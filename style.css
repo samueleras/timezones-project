@@ -42,10 +42,10 @@ main {
 
 .time-container {
     margin: min(10rem, 10vw);
-/*     display: inline-block; */
+    /*     display: inline-block; */
 }
 
-.timezone-container{
+.timezone-container {
     text-align: end;
 }
 
@@ -75,6 +75,66 @@ main {
     text-align: end;
     font-weight: 700;
     font-size: 1.5rem;
+}
+
+.modal {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: hsla(0, 0%, 0%, 0.3);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+}
+
+[tabindex="-1"]{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+#modal-timezone #modal-window{
+    width: 25rem;
+    padding: 1rem;
+    background-color: rgb(237, 238, 162);
+    border-radius: 0.3em;
+    border: 2px solid black;
+    z-index: 3000;
+    margin: 0;
+}
+
+#timezone-dropdown{
+    outline: 0;
+    margin-bottom: 1rem;
+    width: 75%;
+    border: none;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    backdrop-filter: blur(6px);
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+#timezone-dropdown *{
+    background-color: rgb(236, 236, 185);
+}
+
+#modal-timezone #modal-window button{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+
+.modal.is-open {
+    display: block;
 }
 
 
