@@ -34,7 +34,7 @@ main {
 .section {
     border: 2px solid black;
     border-radius: 0.4rem;
-    width: clamp(30rem, 70%, 50rem);
+    width: clamp(25rem, 70%, 50rem);
     display: flex;
     justify-content: center;
     background-color: var(--bg-primary);

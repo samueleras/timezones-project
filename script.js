@@ -3,17 +3,16 @@
 const timezoneElement = document.querySelector('#timezone');
 const timeElement = document.querySelector('#time');
 const dateElement = document.querySelector('#date');
+const formTimezone = document.querySelector('#form-timezone');
+const timezoneDropdown = document.querySelector('#timezone-dropdown');
+
+
+//Default Timezone
+let tz = 'Asia/Tokyo';
+timezoneElement.innerHTML = tz;
 
 //Import dayjs
 const dayjs = require("dayjs");
-
-//Locales
-require('dayjs/locale/de');
-require('dayjs/locale/en-gb');
-
-//Locale Formater
-const localizedFormat = require('dayjs/plugin/localizedFormat')
-dayjs.extend(localizedFormat);
 
 //TimeZones
 const utc = require('dayjs/plugin/utc')
@@ -21,6 +20,8 @@ const timezone = require('dayjs/plugin/timezone')
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
+//Import de locale
+require('dayjs/locale/de');
 
 //Import micromodal
 const MicroModal = require("micromodal");
@@ -28,26 +29,35 @@ const MicroModal = require("micromodal");
 //Initialize Micromodal. Will ne called by #edit button via attribute
 MicroModal.init();
 
+//Add Choosable Timzones
+const timezones = ["Europe/London", "Europe/Berlin", "Asia/Tokyo", "America/New_York"];	
+
+for(let tz of timezones){
+    let option = document.createElement("option");
+    option.value = tz;
+    option.innerText = tz;
+    timezoneDropdown.appendChild(option);
+}
 
 
-let d1 = dayjs.utc().tz('Asia/Taipei').locale('de').format('LLL');
-console.log(d1);
 
-d1 = dayjs.utc().tz('America/New_York').locale('de').format('LLL');
-console.log(d1);
+formTimezone.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    tz = timezoneDropdown.value;
+    console.log(tz);
+    timezoneElement.innerHTML = tz;
+    MicroModal.close('modal-timezone');
+
+});
 
 
 function setTime() {
     let date = dayjs.utc().tz(tz);
-    timeElement.innerHTML = date.format('hh:mm:ss');
-    dateElement.innerHTML = date.format('dddd, D MMMM, YYYY');
+    timeElement.innerHTML = date.locale('de').format('HH:mm:ss');
+    dateElement.innerHTML = date.locale('de').format('dddd, D MMMM, YYYY');
 }
 
-let tz = 'Asia/Tokyo';
+//Start Clock
 setInterval(setTime, 1000);
-timezoneElement.innerHTML = tz;
-
-
-
-
-//First Setup git in VS, then create the timezoneapp as public repo with dayjs and micromodal as described in the fullstack roadmap. Search for the package documentaries on npmjs.com
